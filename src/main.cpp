@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "Sprite.h"
+
 void framebuffer_size_callback( [[maybe_unused]] GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -36,12 +38,16 @@ int main()
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
+    Sprite sprite;
+
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
 
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        sprite.draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

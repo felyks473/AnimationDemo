@@ -14,9 +14,9 @@ find_package(glfw3 REQUIRED)
 set(SOURCES
     ${CMAKE_SOURCE_DIR}/lib/glad.c
     #${CMAKE_SOURCE_DIR}/lib/additional.cpp
-    #${CMAKE_SOURCE_DIR}/src/Shader.cpp
+    ${CMAKE_SOURCE_DIR}/src/Shader.cpp
     ${CMAKE_SOURCE_DIR}/src/main.cpp
-    #${CMAKE_SOURCE_DIR}/src/Sprite.cpp
+    ${CMAKE_SOURCE_DIR}/src/Sprite.cpp
 )
 
 add_executable(AnimationDemo ${SOURCES})
@@ -24,6 +24,7 @@ add_executable(AnimationDemo ${SOURCES})
 target_include_directories(AnimationDemo PUBLIC 
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/lib
+    ${CMAKE_SOURCE_DIR}/lib/glm
 )
 
 target_link_libraries(AnimationDemo PRIVATE OpenGL::GL glfw)
